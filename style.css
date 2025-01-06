@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+}
+#grid-container{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-areas: 
+    "left middle right";
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+#left{
+    grid-area: left;
+    background-color: rgb(230, 230, 230);
+    /* height: 100vh; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#playerA{
+    height: 250px;
+}
+#middle{
+    grid-area: middle;
+    background-color:white;
+    width: 100%;
+}
+#right{
+    grid-area: right;
+    background-color:rgb(230, 230, 230);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+#playerB{
+    height: 250px;
+}
+
+#scoreA,#scoreB{
+    height: 30px;
+    width: 50%;
+    background-color: pink;
+    border-radius: 5px;
+    box-shadow: inset -2px 2px rgb(242, 76, 103);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+}
+
+#middle{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#wepon{
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+}
+
+.nameA{
+    text-align: center;
+    font-weight: bolder;
+    text-decoration-line: line-through;
+    text-decoration-color: rgba(165, 42, 42, 0.286);
+    text-decoration-thickness: 10px;
+}
+#result{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 40px;
+    text-decoration-line: line-through;
+    text-decoration-color: rgba(193, 29, 29, 0.286);
+    text-decoration-thickness: 15px;
+}
+
+button{
+    height: 2rem;
+    width: 30%;
+    background-color: black;
+    color: white;
+    font-weight: bolder;
+    border-radius: 10px;
+}
+button:hover{
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.268);
+    transform: scale(1.1);
+}
+
+@media (max-width:650px){
+    #grid-container{
+        /* display: grid; */
+        grid-template-areas: 
+        "left"
+        "middle"
+        "right";
+        grid-template-rows: 1fr 2fr 1fr;
+        grid-template-columns: 1fr;
+    }
+    #left{
+        flex-direction: row;
+        /* height: 20vh; */
+    }
+    #playerA,#playerB{
+        height: 100px;
+    }
+    #middle{
+        /* height: 60vh; */
+        justify-content: space-between;
+    }
+    #wepon{
+        height: 20vh;
+        align-items: center;
+    }
+    #WA,#WB{
+        height: 80px;
+    }
+    #right{
+        flex-direction: row-reverse;
+    }
+}
